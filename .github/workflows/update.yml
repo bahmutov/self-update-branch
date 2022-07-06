@@ -1,0 +1,16 @@
+# https://glebbahmutov.com/blog/trying-github-actions/
+name: update
+on:
+  # update the branch every night
+  schedule:
+    - cron: '0 3 * * *'
+  # update the branch manually
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
