@@ -22,8 +22,8 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - name: Update Git branch X
         run: |
-          # git config user.name github-actions
-          # git config user.email github-actions@github.com
+          git config user.name "Update branch"
+          git config user.email github-actions@github.com
           git checkout X
           git merge main --no-edit
       - name: Push the updated branch X
