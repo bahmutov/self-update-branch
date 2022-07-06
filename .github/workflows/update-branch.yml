@@ -1,0 +1,26 @@
+# https://glebbahmutov.com/blog/trying-github-actions/
+name: update-branch
+on:
+  # update the branch X every night
+  schedule:
+    - cron: '0 3 * * *'
+  # or update the branch X manually
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        # https://github.com/actions/checkout
+        uses: actions/checkout@v3
+        with:
+          # check out all branches
+          fetch-depth: 0
+      - name: Update Git branch X
+        run: |
+          git checkout X
+          git merge main --no-edit
+      - name: Push the updated branch X
+        run: |
+          git push origin X
