@@ -20,7 +20,7 @@ jobs:
       - name: Update Git branch X
         run: |
           git checkout X
-          git merge main --no-edit
+          # git merge main --no-edit
       - name: Push the updated branch X
         run: |
           git push origin X
