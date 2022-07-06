@@ -1,0 +1,12 @@
+version: 2.1
+
+jobs:
+  hello:
+    steps:
+      - checkout
+      - run: echo "Hello world"
+
+workflows:
+  pipeline:
+    jobs:
+      - hello
