@@ -1,4 +1,4 @@
-name: update-branch
+name: test-branch-x
 on:
   push:
     branches:
